@@ -1,0 +1,103 @@
+.player-container {
+  background: #000;
+  position: fixed;
+  width: 100%;
+  padding: 10px;
+  bottom: 0;
+
+}
+
+input[type="range"] {
+  width: 80%;
+  margin-top: 10px;
+  appearance: none;
+  height: 8px;
+  border-radius: 4px;
+  background-color: #14151c;
+  color: red;
+  outline: none;
+  padding: 0;
+  cursor: pointer;
+  --track-color: rgba(0, 0, 0, 0.2);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #3950fb;
+  cursor: pointer;
+  margin-top: -3px;
+
+}
+
+input[type="range"]::-moz-range-progress {
+  background-color: #007db5;
+}
+
+input[type="range"]::-webkit-progress-value {
+  background-color: red;
+}
+
+progress {
+  -webkit-appearance: none;
+}
+.next,.prev{
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.5s ;
+}
+.next:hover,.prev:hover{
+  background: var(--grey);
+}
+
+.player-controls {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-pause {
+  height: 50px;
+  width: 50px;
+  background: var(--grey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.player-actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.player-detail {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+}
+
+@media screen and (max-width:900px) {
+  span{
+    font-size: small;
+  }
+  .player-detail{
+    gap: 2px;
+  }
+  input[type="range"] {
+    width: 70%;
+  }
+}

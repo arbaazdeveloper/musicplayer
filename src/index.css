@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;700&display=swap');
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  --grey:#202128;
+  
+
+ 
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+body {
+  margin: 0;
+  background-color: #14151c;
+  color: #fff;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  
+}
+
+
+.audio-player{
+  width: 100%;
+  background: none;
+  color: #fff;
+}
+audio::-webkit-media-controls-panel {
+ 
+  border-radius: 5px;
+  color: #fff;
+  /* Add more styles as needed */
+}
+audio::-webkit-media-controls-timeline {
+  background-color: #fff;
+  /* Add more styles as needed */
+}
+@media screen and  (max-width:900px){
+  body{
+    overflow: auto;
+    overflow-x: hidden;
+  }
+  
+}
