@@ -4,8 +4,10 @@ import PlayIcon from '../../assets/PlayIcon';
 import NextIcon from '../../assets/NextIcon';
 import PrevIcon from '../../assets/PrevIcon';
 import PauseIcon from '../../assets/PauseIcon';
+import SoundIcon from '../../assets/SoundIcon';
 const AudioPlayer = ({ tracks, playerRef, playTrack, playNextTrack, setIsPlaying, playPrevTrack }) => {
-  const [currentTime, setCurrentTime] = useState(0)
+  const [currentTime, setCurrentTime] = useState(0);
+  const [toggleVolume,setToggleVolume]=useState(false)
   const handleTimelineChange = (e) => {
     const newTime = parseFloat(e.target.value);
     setCurrentTime(newTime);
@@ -41,6 +43,11 @@ const AudioPlayer = ({ tracks, playerRef, playTrack, playNextTrack, setIsPlaying
     }
 
   }
+  const handleVolumeChange = (e) => {
+    const newVolume = Math.min(1, parseFloat(e.target.value));
+    playerRef.current.volume = newVolume;
+  };
+  
   return (
     <div className='player-container'>
       <audio
@@ -103,6 +110,15 @@ const AudioPlayer = ({ tracks, playerRef, playTrack, playNextTrack, setIsPlaying
 
           />
           <span>{formatNan(formatTime(playerRef.current ? playerRef.current.duration : 0))}</span>
+          <div className='audio-control'>
+          <button onClick={()=>{
+            setToggleVolume(!toggleVolume)
+          }}><SoundIcon/></button>
+         {toggleVolume &&  <input className='volume-control' min="0"
+        max="10"
+        step="0.01" onChange={handleVolumeChange} type='range'/>}
+           
+          </div>
         </div>
       </div>
     </div>

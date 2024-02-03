@@ -89,6 +89,27 @@ progress {
   gap: 5px;
 
 }
+.audio-control {
+ 
+  display: flex;
+  justify-content: space-around;
+}
+
+.volume-control {
+  
+  
+  transform: rotate(-90deg);
+  width: 50px !important;
+  margin-bottom: 20px;
+
+}
+.audio-control button{
+  background: none;
+  outline: none;
+  border: none;
+  margin: 0;
+  cursor: pointer;
+}
 
 @media screen and (max-width:900px) {
   span{
